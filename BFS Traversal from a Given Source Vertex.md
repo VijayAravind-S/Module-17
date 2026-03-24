@@ -26,10 +26,43 @@ To write a Python program to **print BFS traversal** from a given source vertex.
 ## PYTHON PROGRAM
 
 ```
-ENTER YOUR CODE HERE
+#Reg.No: 212222060292
+#Name: Vijay Aravind S
+#Add Your Code Here
+from collections import defaultdict
+class Graph:
+	def __init__(self):
+		self.graph = defaultdict(list)
+	def addEdge(self,u,v):
+		self.graph[u].append(v)
+	def BFS(self, s):
+		visited = [False] * (max(self.graph) + 1)
+		queue = []
+		queue.append(s)
+		visited[s] = True
+		while queue:
+		    s=queue.pop(0)
+		    print(s,end=' ')
+		    for i in self.graph[s]:
+		        if visited[i]==False:
+		            queue.append(i)
+		            visited[i]=True
+n=int(input())
+g = Graph()
+g.addEdge(0, 1)
+g.addEdge(0, 2)
+g.addEdge(1, 2)
+g.addEdge(2, 0)
+g.addEdge(2, 3)
+g.addEdge(3, 3)
+print ("Following is Breadth First Traversal"
+				" (starting from vertex {})".format(n))
+g.BFS(n)
 ```
 
 ## OUTPUT
+<img width="1187" height="297" alt="image" src="https://github.com/user-attachments/assets/d859b681-0e26-4e26-8a4e-3e5d42b72cab" />
 
 
 ## RESULT
+Therefore, the output is the example to write a Python program to print BFS traversal from a given source vertex.
